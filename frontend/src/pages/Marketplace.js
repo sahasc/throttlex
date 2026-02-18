@@ -4,6 +4,7 @@ import { Plus, Search } from 'lucide-react';
 import { useData } from '../contexts/DataContext';
 import { useAuth } from '../contexts/AuthContext';
 import MarketplaceCard from '../components/MarketplaceCard';
+import ImageUpload from '../components/ImageUpload';
 
 const Marketplace = () => {
   const { marketplaceItems, addMarketplaceItem } = useData();
