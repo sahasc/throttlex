@@ -120,6 +120,27 @@ const PackDetail = () => {
                 <p className="text-throttle-text-secondary leading-relaxed">{pack.description}</p>
               </div>
 
+              {/* Scheduled Rides */}
+              {pack.scheduledRides && pack.scheduledRides.length > 0 && (
+                <div className="mt-6 pt-6 border-t border-throttle-border">
+                  <p className="text-sm text-throttle-text-muted uppercase mb-4">UPCOMING PACK RIDES</p>
+                  <div className="space-y-3">
+                    {pack.scheduledRides.map((sr) => (
+                      <div
+                        key={sr.id}
+                        onClick={() => navigate(`/rides/${sr.rideId}`)}
+                        className="bg-throttle-bg-secondary p-4 cursor-pointer hover:border-l-2 hover:border-throttle-red transition-all"
+                      >
+                        <p className="text-white font-bold">{sr.rideName}</p>
+                        <p className="text-throttle-text-muted text-sm mt-1">
+                          {new Date(sr.date).toLocaleDateString()}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               <div className="mt-6 pt-6 border-t border-throttle-border">
                 <p className="text-sm text-throttle-text-muted uppercase mb-2">Created By</p>
                 <p className="text-white font-bold">{pack.createdBy}</p>
