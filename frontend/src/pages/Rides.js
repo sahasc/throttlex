@@ -37,9 +37,9 @@ const Rides = () => {
       createdById: user.id,
       currentRiders: 1,
       riders: [user.id],
-      image: formData.isEV
+      image: formData.uploadedImage || (formData.isEV
         ? 'https://images.unsplash.com/photo-1760555961058-fd625e6a0b6d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwyfHxtb3RvcmN5Y2xlJTIwcmlkZXIlMjBuaWdodCUyMGNpdHklMjBuZW9uJTIwbGlnaHRzJTIwY2luZW1hdGljfGVufDB8fHx8MTc3MTM5MTc3N3ww&ixlib=rb-4.1.0&q=85'
-        : 'https://images.unsplash.com/photo-1669283149120-d539f814aa03?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwxfHxtb3RvcmN5Y2xlJTIwcmlkZXIlMjBuaWdodCUyMGNpdHklMjBuZW9uJTIwbGlnaHRzJTIwY2luZW1hdGljfGVufDB8fHx8MTc3MTM5MTc3N3ww&ixlib=rb-4.1.0&q=85',
+        : 'https://images.unsplash.com/photo-1669283149120-d539f814aa03?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwxfHxtb3RvcmN5Y2xlJTIwcmlkZXIlMjBuaWdodCUyMGNpdHklMjBuZW9uJTIwbGlnaHRzJTIwY2luZW1hdGljfGVufDB8fHx8MTc3MTM5MTc3N3ww&ixlib=rb-4.1.0&q=85'),
       comments: [],
       createdAt: new Date().toISOString(),
     };
