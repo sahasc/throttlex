@@ -36,7 +36,7 @@ const Home = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <Hero
-        title="FIND YOUR PACK"
+        title="THROTTLEX"
         subtitle="Join the ultimate performance community. Ride together. Trade gear. Build legacy."
         ctaPrimary="JOIN A RIDE"
         ctaSecondary="CREATE A RIDE"
