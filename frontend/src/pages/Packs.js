@@ -4,6 +4,7 @@ import { Plus, Search } from 'lucide-react';
 import { useData } from '../contexts/DataContext';
 import { useAuth } from '../contexts/AuthContext';
 import PackCard from '../components/PackCard';
+import ImageUpload from '../components/ImageUpload';
 
 const Packs = () => {
   const { packs, addPack } = useData();
