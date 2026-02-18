@@ -43,7 +43,7 @@ const Sustainability = () => {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1770608014330-7de6ce86c69d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzZ8MHwxfHNlYXJjaHwyfHxjaW5lbWF0aWMlMjBzcG9ydHMlMjBjYXIlMjBuaWdodCUyMGNpdHklMjBzdHJlZXQlMjBkYXJrJTIwbW9vZHl8ZW58MHx8fHwxNzcxMzkxNzc2fDA&ixlib=rb-4.1.0&q=85')",
+            backgroundImage: "url('https://github.com/sahasc/throttlex/blob/main/susbg.png?raw=true')",
           }}
         />
         <div className="hero-overlay absolute inset-0" />
