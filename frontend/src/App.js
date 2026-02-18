@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { DataProvider } from './contexts/DataContext';
 import { initializeStorage } from './utils/localStorage';
+import { seedDemoData } from './utils/seedData';
 import './App.css';
 
 // Components
@@ -19,6 +20,7 @@ import Marketplace from './pages/Marketplace';
 import ItemDetail from './pages/ItemDetail';
 import Sustainability from './pages/Sustainability';
 import Profile from './pages/Profile';
+import Leaderboard from './pages/Leaderboard';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
