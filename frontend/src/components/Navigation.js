@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { Home, Zap, Users, ShoppingBag, Leaf, User, LogOut } from 'lucide-react';
+import { Home, Zap, Users, ShoppingBag, Leaf, User, LogOut, Trophy } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { motion } from 'framer-motion';
 
@@ -19,6 +19,7 @@ const Navigation = () => {
     { path: '/rides', icon: Zap, label: 'RIDES' },
     { path: '/packs', icon: Users, label: 'PACKS' },
     { path: '/marketplace', icon: ShoppingBag, label: 'GEAR' },
+    { path: '/leaderboard', icon: Trophy, label: 'TOP' },
     { path: '/sustainability', icon: Leaf, label: 'IMPACT' },
   ];
 
