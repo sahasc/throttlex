@@ -40,7 +40,7 @@ const Home = () => {
         subtitle="Join the ultimate performance community. Ride together. Trade gear. Build legacy."
         ctaPrimary="JOIN A RIDE"
         ctaSecondary="CREATE A RIDE"
-        backgroundImage="https://images.unsplash.com/photo-1748739550781-44dbf5fe0cdd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzZ8MHwxfHNlYXJjaHw0fHxjaW5lbWF0aWMlMjBzcG9ydHMlMjBjYXIlMjBuaWdodCUyMGNpdHklMjBzdHJlZXQlMjBkYXJrJTIwbW9vZHl8ZW58MHx8fHwxNzcxMzkxNzc2fDA&ixlib=rb-4.1.0&q=85"
+        backgroundImage="https://github.com/sahasc/throttlex/blob/main/homebg.png?raw=true"
         onPrimaryClick={() => navigate('/rides')}
         onSecondaryClick={() => navigate('/rides')}
       />
