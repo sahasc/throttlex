@@ -137,6 +137,7 @@ const AppRoutes = () => {
 function App() {
   useEffect(() => {
     initializeStorage();
+    seedDemoData(); // Load demo data
   }, []);
 
   return (
