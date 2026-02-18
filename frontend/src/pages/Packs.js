@@ -140,6 +140,14 @@ const Packs = () => {
                 />
               </div>
 
+              <div>
+                <ImageUpload
+                  onImageSelect={(image) => setFormData({ ...formData, uploadedImage: image })}
+                  currentImage={formData.uploadedImage}
+                  label="Pack Image (optional)"
+                />
+              </div>
+
               <div className="flex gap-4">
                 <button
                   type="submit"
