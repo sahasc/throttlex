@@ -35,7 +35,8 @@ const Marketplace = () => {
       bids: [],
       sellerId: user.id,
       sellerName: user.name,
-      image: formData.imageUrl || 'https://images.unsplash.com/photo-1649027421785-6827863f0891?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAxODF8MHwxfHNlYXJjaHwzfHxjYXJib24lMjBmaWJlciUyMG1vdG9yY3ljbGUlMjBoZWxtZXQlMjBsdXh1cnklMjBnZWFyfGVufDB8fHx8MTc3MTM5MTc4MXww&ixlib=rb-4.1.0&q=85',
+      sellerRating: 5.0, // Default rating for new sellers
+      image: formData.uploadedImage || formData.imageUrl || 'https://images.unsplash.com/photo-1649027421785-6827863f0891?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAxODF8MHwxfHNlYXJjaHwzfHxjYXJib24lMjBmaWJlciUyMG1vdG9yY3ljbGUlMjBoZWxtZXQlMjBsdXh1cnklMjBnZWFyfGVufDB8fHx8MTc3MTM5MTc4MXww&ixlib=rb-4.1.0&q=85',
       createdAt: new Date().toISOString(),
     };
 
