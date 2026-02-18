@@ -55,6 +55,7 @@ const Rides = () => {
       isEV: false,
       location: '',
       location_data: null,
+      uploadedImage: null,
     });
   };
 
