@@ -22,6 +22,7 @@ const Rides = () => {
     isEV: false,
     location: '',
     location_data: null,
+    uploadedImage: null,
   });
 
   const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
