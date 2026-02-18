@@ -150,6 +150,9 @@ const Home = () => {
           </button>
         </motion.div>
       </section>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };
