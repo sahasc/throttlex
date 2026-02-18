@@ -58,10 +58,7 @@ const Auth = () => {
         >
           {/* Logo */}
           <div className="flex items-center justify-center mb-8">
-            <Zap size={40} className="text-throttle-red" />
-            <h1 className="font-heading text-4xl font-black uppercase tracking-tighter ml-2">
-              THROTTLE<span className="text-throttle-red">X</span>
-            </h1>
+            <ThrottleLogo size="medium" />
           </div>
 
           {/* Form */}
