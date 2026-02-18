@@ -6,6 +6,7 @@ import { useAuth } from '../contexts/AuthContext';
 import RideCard from '../components/RideCard';
 import { APIProvider } from '@vis.gl/react-google-maps';
 import PlaceAutocomplete from '../components/PlaceAutocomplete';
+import ImageUpload from '../components/ImageUpload';
 
 const Rides = () => {
   const { rides, addRide } = useData();
