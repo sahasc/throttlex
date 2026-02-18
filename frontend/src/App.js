@@ -1,51 +1,142 @@
-import { useEffect } from "react";
-import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
+import React, { useEffect } from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { AuthProvider, useAuth } from './contexts/AuthContext';
+import { DataProvider } from './contexts/DataContext';
+import { initializeStorage } from './utils/localStorage';
+import './App.css';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+// Components
+import Navigation from './components/Navigation';
 
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
+// Pages
+import Auth from './pages/Auth';
+import Home from './pages/Home';
+import Rides from './pages/Rides';
+import RideDetail from './pages/RideDetail';
+import Packs from './pages/Packs';
+import PackDetail from './pages/PackDetail';
+import Marketplace from './pages/Marketplace';
+import ItemDetail from './pages/ItemDetail';
+import Sustainability from './pages/Sustainability';
+import Profile from './pages/Profile';
 
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
+// Protected Route Component
+const ProtectedRoute = ({ children }) => {
+  const { user, loading } = useAuth();
+  
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-throttle-bg-main">
+        <div className="text-throttle-text-secondary">Loading...</div>
+      </div>
+    );
+  }
+  
+  return user ? children : <Navigate to="/auth" />;
+};
+
+// Main App Routes
+const AppRoutes = () => {
+  const { user } = useAuth();
 
   return (
-    <div>
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
-    </div>
+    <>
+      <Navigation />
+      <Routes>
+        <Route 
+          path="/auth" 
+          element={user ? <Navigate to="/" /> : <Auth />} 
+        />
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute>
+              <Home />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/rides"
+          element={
+            <ProtectedRoute>
+              <Rides />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/rides/:id"
+          element={
+            <ProtectedRoute>
+              <RideDetail />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/packs"
+          element={
+            <ProtectedRoute>
+              <Packs />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/packs/:id"
+          element={
+            <ProtectedRoute>
+              <PackDetail />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/marketplace"
+          element={
+            <ProtectedRoute>
+              <Marketplace />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/marketplace/:id"
+          element={
+            <ProtectedRoute>
+              <ItemDetail />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/sustainability"
+          element={
+            <ProtectedRoute>
+              <Sustainability />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
+    </>
   );
 };
 
 function App() {
+  useEffect(() => {
+    initializeStorage();
+  }, []);
+
   return (
     <div className="App">
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
+        <AuthProvider>
+          <DataProvider>
+            <AppRoutes />
+          </DataProvider>
+        </AuthProvider>
       </BrowserRouter>
     </div>
   );
