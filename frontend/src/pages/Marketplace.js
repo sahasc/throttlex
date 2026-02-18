@@ -154,16 +154,26 @@ const Marketplace = () => {
 
               <div>
                 <label className="block text-sm font-bold uppercase tracking-wider text-throttle-text-secondary mb-2">
-                  Image URL (optional)
+                  Image
                 </label>
-                <input
-                  type="url"
-                  value={formData.imageUrl}
-                  onChange={(e) => setFormData({ ...formData, imageUrl: e.target.value })}
-                  data-testid="item-image-input"
-                  className="input-throttle w-full px-4 py-3"
-                  placeholder="https://..."
+                <ImageUpload
+                  onImageSelect={(image) => setFormData({ ...formData, uploadedImage: image })}
+                  currentImage={formData.uploadedImage}
+                  label=""
                 />
+                <div className="mt-3">
+                  <label className="block text-xs text-throttle-text-muted uppercase mb-1">
+                    Or enter image URL
+                  </label>
+                  <input
+                    type="url"
+                    value={formData.imageUrl}
+                    onChange={(e) => setFormData({ ...formData, imageUrl: e.target.value })}
+                    data-testid="item-image-input"
+                    className="input-throttle w-full px-4 py-2 text-sm"
+                    placeholder="https://..."
+                  />
+                </div>
               </div>
 
               <div className="flex items-center gap-3">
