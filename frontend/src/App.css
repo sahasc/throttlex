@@ -1,34 +1,57 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+.App {
+  min-height: 100vh;
+  background: #050505;
+  color: #F5F5F5;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+.hero-overlay {
+  background: linear-gradient(to top, #050505 0%, rgba(5, 5, 5, 0.8) 50%, transparent 100%);
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.skew-button {
+  transform: skewX(-10deg);
+  transition: all 0.3s ease;
 }
 
-.App-link {
-    color: #61dafb;
+.skew-button:hover {
+  transform: skewX(-12deg) scale(1.05);
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.skew-button span {
+  display: inline-block;
+  transform: skewX(10deg);
+}
+
+.ride-card {
+  transition: all 0.3s ease;
+}
+
+.ride-card:hover {
+  border-color: #E10600;
+  transform: translateY(-4px);
+}
+
+.marketplace-card {
+  transition: all 0.3s ease;
+}
+
+.marketplace-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.02);
+}
+
+.input-throttle {
+  background: #121212;
+  border: 1px solid #262626;
+  color: #F5F5F5;
+  transition: border-color 0.3s ease;
+}
+
+.input-throttle:focus {
+  border-color: #E10600;
+  outline: none;
+}
+
+.input-throttle::placeholder {
+  color: #525252;
 }
