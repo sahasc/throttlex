@@ -37,6 +37,7 @@ const Packs = () => {
     setFormData({
       name: '',
       description: '',
+      uploadedImage: null,
     });
   };
 
