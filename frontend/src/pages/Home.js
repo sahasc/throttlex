@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Hero from '../components/Hero';
+import Footer from '../components/Footer';
 import { useData } from '../contexts/DataContext';
 import { Zap, Users, ShoppingBag, TrendingUp } from 'lucide-react';
 
