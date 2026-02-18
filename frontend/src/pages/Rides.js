@@ -167,6 +167,14 @@ const Rides = () => {
                   )}
                 </div>
 
+                <div>
+                  <ImageUpload
+                    onImageSelect={(image) => setFormData({ ...formData, uploadedImage: image })}
+                    currentImage={formData.uploadedImage}
+                    label="Ride Image (optional)"
+                  />
+                </div>
+
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-bold uppercase tracking-wider text-throttle-text-secondary mb-2">
