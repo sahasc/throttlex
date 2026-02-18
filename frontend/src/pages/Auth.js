@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { motion } from 'framer-motion';
-import { Zap } from 'lucide-react';
+import ThrottleLogo from '../components/ThrottleLogo';
 
 const Auth = () => {
   const [isLogin, setIsLogin] = useState(true);
