@@ -126,9 +126,17 @@ const ItemDetail = () => {
 
             <div className="pt-6 border-t border-throttle-border">
               <p className="text-sm text-throttle-text-muted uppercase mb-2">SELLER</p>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-3">
                 <User size={16} className="text-throttle-red" />
-                <p className="text-white font-bold">{item.sellerName}</p>
+                <div>
+                  <p className="text-white font-bold">{item.sellerName}</p>
+                  {item.sellerRating && (
+                    <div className="flex items-center gap-1 mt-1">
+                      <span className="text-throttle-neon-green text-sm font-bold">{item.sellerRating.toFixed(1)}</span>
+                      <span className="text-throttle-text-muted text-xs">/ 5.0</span>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
 
