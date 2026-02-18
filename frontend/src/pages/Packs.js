@@ -14,6 +14,7 @@ const Packs = () => {
   const [formData, setFormData] = useState({
     name: '',
     description: '',
+    uploadedImage: null,
   });
 
   const handleCreatePack = (e) => {
