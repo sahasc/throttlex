@@ -49,6 +49,7 @@ const Marketplace = () => {
       isBidding: false,
       currentBid: '',
       imageUrl: '',
+      uploadedImage: null,
     });
   };
 
